@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <style>
+         .head_image{
+         background: url('{% static 'images/resort.jpg' %}') no-repeat ;
+         background-size: cover;
+         height: 470px;
+        }
+
+        .centered {
+          position: absolute;
+          top: 50%;
+          left: 30%;
+          transform: translate(-50%, -50%);
+        }
+
+    </style>
+{% endblock %}
+
+
+{% block body %}
+    <div class="head_image">
+        <div class="centered text-white">
+            <h1><i class="fas fa-hotel text-dark"></i> Athletic Resort</h1>
+            <p class="text-center">Enjoy your holiday <i class="far fa-smile"></i></p>
+        </div>
+    </div>
+
+    <!------ Start slider 4 in 1 ------->
+        <div class="bg-white">
+            <div class=""><br>
+            <h3 class="text-center">Features</h3>
+            <!--Carousel Wrapper-->
+            <div id="multi-item-example1" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+              <!--Slides-->
+              <div class="carousel-inner" role="listbox">
+
+                <!--First slide-->
+                <div class="carousel-item active ">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="card-img-top" src="{% static 'images/feature/f1.jpg' %}" style="height:270px;"
+                              alt="Card image cap">
+                        </div>
+
+                        <div class="col-md-3">
+                            <img class="card-img-top" src="{% static 'images/feature/f2.jpg' %}" style="height:270px;"
+                              alt="Card image cap">
+                        </div>
+
+                        <div class="col-md-3">
+                            <img class="card-img-top" src="{% static 'images/feature/f3.jpg' %}" style="height:270px;"
+                              alt="Card image cap">
+                        </div>
+
+                        <div class="col-md-3">
+                            <img class="card-img-top" src="{% static 'images/feature/f4.jpg' %}" style="height:270px;"
+                              alt="Card image cap">
+                        </div>
+                    </div>
+                </div>
+                <!--/.First slide-->
+
+                <!--Second slide-->
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="card-img-top" src="{% static 'images/feature/f5.jpg' %}"style="height:270px;"
+                                  alt="Card image cap">
+                        </div>
+
+                        <div class="col-md-3">
+                            <img class="card-img-top" src="{% static 'images/feature/f6.jpg' %}"style="height:270px;"
+                                  alt="Card image cap">
+                        </div>
+
+                        <div class="col-md-3">
+                            <img class="card-img-top" src="{% static 'images/feature/f7.jpg' %}"style="height:270px;"
+                                  alt="Card image cap">
+                        </div>
+
+                        <div class="col-md-3">
+                            <img class="card-img-top" src="{% static 'images/feature/f8.jpg' %}"style="height:270px;"
+                                  alt="Card image cap">
+                        </div>
+                    </div>
+                </div>
+                <!--/.Second slide-->
+              </div>
+                <!--/.Slides-->
+
+                <a class="carousel-control-prev" href="#multi-item-example1" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#multi-item-example1" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <!--/.Carousel Wrapper-->
+        </div><br>
+        </div>
+     <!------ End slider 4 in 1 ------->
+
+    <!--    Service start-->
+        <div class="bg-light"><br>
+            <div class="container">
+                <h3 class="text-center">Services</h3><hr>
+                <div class="row">
+                    <div class="col text-center ">
+                        <h2><i class="fas fa-cocktail"></i></h2>
+                        <h5>Free Cocktails</h5>
+                        <p>10p.m.-12p.m. you can enjoy your time with a glass of cocktails.</p>
+                    </div>
+                    <div class="col text-center">
+                        <h2><i class="fas fa-hiking"></i></h2>
+                        <h5>Endless Hiking</h5>
+                        <p>You will get endless hiking for anytime. you can carry food from us for hiking.</p>
+                    </div>
+                    <div class="col text-center">
+                        <h2><i class="fas fa-shuttle-van"></i></h2>
+                        <h5>Free Shuttle</h5>
+                        <p>You will get free shuttle for 2 hours at a time.</p>
+                    </div>
+                    <div class="col text-center">
+                        <h2><i class="fas fa-beer"></i></h2>
+                        <h5>Strongest Beer</h5>
+                        <p>We provide best strongest beer for all. Anyone should buy 'World best Strongest Beer' from us.</p>
+                    </div>
+                </div><br>
+            </div>
+        </div>
+    <!--    Service End-->
+
+
+    <!--    About us start-->
+        <div class="bg-secondary"><br>
+            <div class="container">
+                <h3 class="text-center">About Us</h3><hr>
+                <div class="row">
+                    <div class="col text-center">
+                        <h2><i class="fas fa-door-open"></i></h2>
+                        <h5>Check in</h5>
+                        <p>Athletic resort are open 24 hours. Anytime you can check in here.</p>
+                    </div>
+                    <div class="col text-center">
+                        <h2><i class="fas fa-child"></i></h2>
+                        <h5>Kids Zone</h5>
+                        <p>We have big play ground for kids. No extra charge for any kids.</p>
+                    </div>
+                    <div class="col text-center">
+                        <h2><i class="fas fa-parking"></i></h2>
+                        <h5>Parking</h5>
+                        <p>We have big parking place for car and bus.
+                            More then 600 car and bus we can park our parking area.
+                        </p>
+                    </div>
+                    <div class="col text-center">
+                        <h2><i class="fas fa-shield-alt"></i></h2>
+                        <h5>Security</h5>
+                        <p>We provide our best security. We also ensure that our security are best from others.
+                        </p>
+                    </div>
+                    <div class="col text-center">
+                        <h2><i class="far fa-money-bill-alt"></i></h2>
+                        <h5>Payment</h5>
+                        <p>You can use cash or any kind of card to pay bill.
+                        </p>
+                    </div>
+                </div><br>
+            </div>
+        </div>
+    <!--    About us End-->
+
+    <!--    Footer start -->
+        <div class="bg-dark">
+            <div class="container"><br>
+                <div class="row">
+                    <div class="col">
+                        <div class="text-center">
+                            <h3 class="text-muted"><i class="fas fa-hotel "></i> Athletic Resort</h3>
+                            <h6 class="text-muted"> made by SR Paul</h6>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="text-center">
+                            <h6 class="text-muted"><i class="fas fa-mobile-alt"></i> Phone:  01701232098</h6>
+                            <h6 class="text-muted"><i class="fas fa-at"></i> Email:  athletic-resort@gmail.com</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!--    Footer End-->
+{% endblock %}

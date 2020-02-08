@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-3">
+        <form method="post" action="">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-outline-info my-2 my-sm-0">Submit</button>
+        </form><br><br>
+
+        <h3 class="text-center"> Lists of NotePad </h3><hr>
+    <!-- Start  View -->
+        <div class="col-sm-15" >
+            <div class="card rounded-0">
+                <div class="card-header">
+                    <p class="mb-0">{{ note_pad_all.count }} Notepad</p>
+                </div>
+            </div>
+        </div><br>
+        <div class="">
+            {% for note in note_pad_all %}
+            <p> Note : {{ note.note_pad }}</p>
+            <div class="row">
+                <div class="col">
+                    <blockquote class="blockquote">
+                        <footer class="blockquote-footer">By <cite title="Source Title">{{ note.name }}</cite></footer>
+                    </blockquote>
+                </div>
+                <div class="col">
+                    <blockquote class="blockquote text-right">
+                        <footer class="blockquote-footer"><cite title="Source Title">{{ note.time }}</cite></footer>
+                    </blockquote>
+                </div>
+            </div><hr>
+            {% endfor %}
+        </div>
+    <!-- End View -->
+    </div>
+{% endblock %}

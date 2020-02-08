@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load staticfiles%}
+
+{% block head %}
+    <style></style>
+{% endblock %}
+
+{% block body %}
+    <div class="">
+        <div class="container"><br>
+
+            <!-- Search form -->
+            <form class="form-inline md-form mt-2 mb-3 justify-content-center" action="/athletic_resort/room_list/" method="post">
+                {% csrf_token %}
+              <input class="form-control form-control-md mr-3 w-50" name="search" type="text" placeholder="Search(Room Type)"
+                aria-label="Search">
+              <button type="submit" class="bg-light btn btn-light">
+                  <i class="fas fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+            <!-- End Search form -->
+
+            <!-- Start room list -->
+            <div class="row">
+                {% for r in room %}
+                <div class="col">
+                    <div class="card" style="width: 21.8rem;">
+                        <a href="/athletic_resort/room_details/{{r.id}}/{{r.room_type}}/">
+                            <img src="{{ r.room_image.url }}" class="card-img-top" width="100%" height="200px" alt="...">
+                        </a>
+                      <div class="card-body">
+                        <h4 class="card-title">{{ r.room_type }}</h4>
+                          <p class="card-text"><b>Resort Name :</b> {{ r.resort_name }}<br>
+                             <b> Price :</b> {{ r.price }}</br>
+                        </p>
+                      </div>
+                    </div><br>
+                </div>
+                {% endfor %}
+            </div>
+              <!-- End room list -->
+        </div>
+    </div>
+
+    <!-- Start search -->
+    <div class="container">
+        <!-- Start messages alert  -->
+        <ul class="form-group">
+            {% if messages %}
+            <ul class="messages">
+            {% for message in messages %}
+                <li style="color: red">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{ message }}
+                </li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+        </ul>
+    <!-- End messages alert  -->
+
+   <!-- View search  -->
+    <div class="container">
+        <div class="row">
+            {% if sr %}
+           {% for s in sr %}
+                <div class="col-4">
+                    <div class="card" style="width: 21.8rem;">
+                        <a href="/athletic_resort/room_details/{{s.id}}/{{s.room_type}}/">
+                            <img src="{{ s.room_image.url }}" class="card-img-top" width="100%" height="200px" alt="...">
+                        </a>
+                      <div class="card-body">
+                        <h4 class="card-title">{{ s.room_type }}</h4>
+                          <p class="card-text"><b>Resort Name :</b> {{ s.resort_name }}<br>
+                             <b> Price :</b> {{ s.price }}</br>
+                        </p>
+                      </div>
+                    </div><br>
+                </div>
+               {% endfor %}
+       {% endif %}
+        </div>
+   </div>
+    <!-- End search -->
+</div>
+{% endblock %}
